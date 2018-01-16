@@ -7,6 +7,13 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('ong');
+  this.route('contato');
+  this.route('sobre');
+  this.route('ongs');
+  this.route('admin', function(){
+    this.route('ong')
+  });
 });
 
 export default Router;
