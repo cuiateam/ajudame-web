@@ -13,6 +13,9 @@ Router.map(function() {
   this.route('ongs');
   this.route('admin', function(){
     this.route('ong')
+    this.route('usuario');
+    this.route('cidade');
+    this.route('estado');
   });
 });
 
