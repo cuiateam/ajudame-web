@@ -3,6 +3,6 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
     model(){
-        return this.store.findAll('estado');
+        return this.store.findAll('contato');
     }
 });

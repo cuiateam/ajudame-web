@@ -1,6 +1,5 @@
 <div class="container">    
-    {{#link-to "admin.estado.new" tagName="a" class="btn btn-primary pull-right"}}Novo{{/link-to}}
-    <h2>Estado</h2>
+    <h2>Contato</h2>
     <div class="container">        
         {{outlet}}
     </div>
@@ -10,6 +9,8 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Mensagem</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,6 +18,8 @@
                     <tr>
                         <td>{{item.id}}</td>
                         <td>{{item.nome}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.mensagem}}</td>
                     </tr>
                 {{/each}}
             </tbody>

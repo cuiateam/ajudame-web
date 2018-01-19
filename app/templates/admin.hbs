@@ -1,3 +1,15 @@
-<h1>Tela de Administração</h1>
-<hr />
-{{outlet}}
+<div class="container">
+    <h2>Administração</h2>
+    <ul class="nav nav-tabs">
+        {{#each model.tabs as |tab|}}
+            {{#link-to tab.route tagName='li' href=false}}
+                {{#link-to tab.route}}{{tab.name}}{{/link-to}}
+            {{/link-to}}
+        {{/each}}
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active">
+            {{outlet}}
+        </div>
+    </div>
+</div>

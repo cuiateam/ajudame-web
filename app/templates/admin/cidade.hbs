@@ -1,1 +1,27 @@
-{{outlet}}
+<div class="container">    
+    {{#link-to "admin.cidade.new" tagName="a" class="btn btn-primary pull-right"}}Novo{{/link-to}}
+    <h2>Cidade</h2>
+    <div class="container">        
+        {{outlet}}
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each model as |item|}}
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.estado}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

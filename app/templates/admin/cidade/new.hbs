@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="well">
+        <form>
+            <div class="form-group">
+                <label for="Nome">Nome</label>
+                {{input type="text" value=model.nome class="form-control" placeholder="Cidade"}}
+            </div>
+            <div class="form-group">
+                <label for="Estado">Estado</label>
+                <select class="form-control">
+                    <option value="0" selected>Selecione</option>
+                    {{#each estados as |estado|}}
+                        <option value={{estado.nome}} >{{estado.nome}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="subimt" class="btn btn-primary" {{action 'saveCidade' model}} disabled={{unless model.isValid true}}>Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

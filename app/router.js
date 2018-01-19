@@ -14,8 +14,16 @@ Router.map(function() {
   this.route('admin', function(){
     this.route('ong')
     this.route('usuario');
-    this.route('cidade');
-    this.route('estado');
+    this.route('cidade', function() {
+      this.route('new');
+    });
+    this.route('estado', function() {
+      this.route('new');
+    });
+    this.route('ong-tipo', function() {
+      this.route('new');
+    });
+    this.route('contato');
   });
 });
 

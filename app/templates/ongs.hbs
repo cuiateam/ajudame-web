@@ -1,1 +1,24 @@
-<h1>Lista de ONGs</h1>
+<div class="container">
+    <h1>Lista de ONGs</h1>
+    <hr />
+
+    <div class="row">
+        {{#each model as |ong|}}
+            <div class="col-md-4">
+            {{#ong-item item=ong}}{{/ong-item}}
+            </div>
+        {{else}}
+            {{#if model.isUpdating}}
+            {{spinner-cube}}
+            {{else}}
+            <div class="col-md-12 text-center">
+                <div class="alert alert-info">
+                Desculpe, nenhum resultado!
+                </div>
+            </div>
+            {{/if}}
+        {{/each}}
+</div>
+
+</div>
+
