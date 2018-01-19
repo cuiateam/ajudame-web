@@ -1,10 +1,10 @@
 {
   "name": "ajudame-web",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
-  "description": "Small description for ajudame-web goes here",
+  "description": "Projeto centralizador informações sobre ONGs",
   "license": "MIT",
-  "author": "",
+  "author": "Marcos Oliveira (ziguifrido)",
   "directories": {
     "doc": "doc",
     "test": "tests"
