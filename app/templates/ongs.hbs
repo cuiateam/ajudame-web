@@ -3,13 +3,17 @@
     <hr />
 
     <div class="row">
-        {{#each model as |ong|}}
+        {{#each sortedModel as |ong|}}
             <div class="col-md-4">
             {{#ong-item item=ong}}{{/ong-item}}
             </div>
         {{else}}
-            {{#if model.isUpdating}}
-            {{spinner-cube}}
+            {{#if sortedModel.isUpdating}}
+            <div class="col-md-12 text-center">
+                <div class="alert alert-info">
+                Carregando...
+                </div>
+            </div>
             {{else}}
             <div class="col-md-12 text-center">
                 <div class="alert alert-info">

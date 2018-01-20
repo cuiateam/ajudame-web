@@ -8,9 +8,8 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Tipo</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Tipo</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Trabalhos</th>
                     <th scope="col">Favorecidos</th>
@@ -21,11 +20,10 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each model as |item|}}
+                {{#each sortedModel as |item|}}
                     <tr>
-                        <td>{{item.id}}</td>
-                        <td>{{item.ongTipo.nome}}</td>
                         <td>{{item.nome}}</td>
+                        <td>{{item.ongTipo.nome}}</td>                        
                         <td>{{item.descricao}}</td>
                         <td>{{item.trabalhos}}</td>
                         <td>{{item.favorecidos}}</td>

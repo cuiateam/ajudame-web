@@ -33,7 +33,8 @@
                 <label for="Localização">Localização</label>
                  {{input type="text" value=ong.localizacao class="form-control" placeholder="Coordenadas geográficas, Graus decimais (DD) ex.: 41.40338, 2.17403"}}
             </div>
-            <div class="form-group">
+            <hr />
+            <div class="form-group" style="text-align:right;">
                 <button type="subimt" class="btn btn-primary" {{action 'saveOng' ong}} >Salvar</button>
                 {{#link-to "admin.ong" tagName="a" class="btn btn-default" }}Fechar{{/link-to}}
             </div>

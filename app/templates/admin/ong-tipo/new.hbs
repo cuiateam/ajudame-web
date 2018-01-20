@@ -5,7 +5,8 @@
                 <label for="Nome">Nome</label>
                 {{input type="text" value=model.nome class="form-control" placeholder="Tipo"}}
             </div>
-            <div class="form-group">
+            <hr />
+            <div class="form-group" style="text-align:right;"> 
                 <button type="subimt" class="btn btn-primary" {{action 'saveOngTipo' model}} disabled={{unless model.isValid true}}>Salvar</button>
                 {{#link-to "admin.ong-tipo" tagName="a" class="btn btn-default" }}Fechar{{/link-to}}
             </div>
