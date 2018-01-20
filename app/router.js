@@ -7,12 +7,14 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('ong');
+  this.route('ong', {path: '/ong/:id'});
   this.route('contato');
   this.route('sobre');
   this.route('ongs');
   this.route('admin', function(){
-    this.route('ong')
+    this.route('ong', function() {
+      this.route('new');
+    })
     this.route('usuario', function() {
       this.route('new');
     });

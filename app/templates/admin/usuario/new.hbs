@@ -16,9 +16,11 @@
             <div class="form-group">
                 <label for="Senha">Senha</label>
                  {{input type="password" value=model.senha class="form-control" placeholder="Senha"}}
+                 <small id="emailHelp" class="form-text text-muted">A senha deve conter mais de 10 caracteres!</small>
             </div>
             <div class="form-group">
                 <button type="subimt" class="btn btn-primary" {{action 'saveUsuario' model}} disabled={{unless model.isValid true}}>Salvar</button>
+                {{#link-to "admin.usuario" tagName="a" class="btn btn-default" }}Fechar{{/link-to}}
             </div>
         </form>
     </div>
