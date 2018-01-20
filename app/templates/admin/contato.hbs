@@ -11,6 +11,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">E-mail</th>
                     <th scope="col">Mensagem</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +21,7 @@
                         <td>{{item.nome}}</td>
                         <td>{{item.email}}</td>
                         <td>{{item.mensagem}}</td>
+                        <td><button class="btn btn-danger" {{action 'deleteContato' item}}>X</button></td>
                     </tr>
                 {{/each}}
             </tbody>

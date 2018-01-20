@@ -1,22 +1,29 @@
+import { hash } from 'rsvp';
 import Route from '@ember/routing/route';
 
 export default Route.extend({
 
     model() {
-        return this.store.createRecord('cidade');
+        return hash({
+            cidade: this.store.createRecord('cidade'),
+            estados: this.store.findAll('estado')
+        });
     },
 
-    estados(){
-        return this.store.findAll('estado');
-    },
+    setupController(controller, model) {
+        controller.set('cidade', model.cidade);
+        controller.set('estados', model.estados);
+        
+        this._super(controller, model);
+      },
 
     actions: {
-        saveCidade(newOngTipo){
-            newOngTipo.save().then(() => this.transitionTo('admin.cidade'));
+        saveCidade(newCidade){
+            newCidade.save().then(() => this.transitionTo('admin.cidade'));
         },
 
         willTransition(){
-            this.controller.get('model').rollbackAttributes();
+            this.controller.get('cidade').rollbackAttributes();
         }
     }
 });

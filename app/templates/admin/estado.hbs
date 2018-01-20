@@ -11,6 +11,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Sigla</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
                         <td>{{item.id}}</td>
                         <td>{{item.nome}}</td>
                         <td>{{item.sigla}}</td>
+                        <td><button class="btn btn-danger" {{action 'deleteEstado' item}}>X</button></td>
                     </tr>
                 {{/each}}
             </tbody>

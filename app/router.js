@@ -13,7 +13,9 @@ Router.map(function() {
   this.route('ongs');
   this.route('admin', function(){
     this.route('ong')
-    this.route('usuario');
+    this.route('usuario', function() {
+      this.route('new');
+    });
     this.route('cidade', function() {
       this.route('new');
     });

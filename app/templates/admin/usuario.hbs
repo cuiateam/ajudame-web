@@ -1,1 +1,31 @@
-{{outlet}}
+<div class="container">    
+    {{#link-to "admin.usuario.new" tagName="a" class="btn btn-primary pull-right"}}Novo{{/link-to}}
+    <h2>Usuários</h2>
+    <div class="container">        
+        {{outlet}}
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each model as |item|}}
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.login}}</td>
+                        <td>{{item.email}}</td>
+                        <td><button class="btn btn-danger" {{action 'deleteUsuario' item}}>X</button></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

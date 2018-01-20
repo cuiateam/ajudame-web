@@ -3,19 +3,14 @@
         <form>
             <div class="form-group">
                 <label for="Nome">Nome</label>
-                {{input type="text" value=model.nome class="form-control" placeholder="Cidade"}}
+                {{input type="text" value=cidade.nome class="form-control" placeholder="Cidade"}}
             </div>
             <div class="form-group">
                 <label for="Estado">Estado</label>
-                <select class="form-control">
-                    <option value="0" selected>Selecione</option>
-                    {{#each estados as |estado|}}
-                        <option value={{estado.nome}} >{{estado.nome}}</option>
-                    {{/each}}
-                </select>
+                {{estado-select cidade=cidade estados=estados}}
             </div>
             <div class="form-group">
-                <button type="subimt" class="btn btn-primary" {{action 'saveCidade' model}} disabled={{unless model.isValid true}}>Salvar</button>
+                <button type="subimt" class="btn btn-primary" {{action 'saveCidade' cidade}} disabled={{unless cidade.isValid true}}>Salvar</button>
             </div>
         </form>
     </div>
