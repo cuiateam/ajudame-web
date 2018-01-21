@@ -3,9 +3,10 @@
         <h2 class="panel-title"><b>{{item.nome}}</b></h2>
     </div>
     <div class="panel-body">
-        <p>Descrição: {{item.descricao}}</p>
-        <p>Endereço: {{item.endereco}}</p>
-        <p>Cidade: {{item.cidade.nome}}</p>
+        <p><b>Trabalhos:</b> {{item.trabalhos}}</p>
+        <p><b>Favorecidos:</b> {{item.favorecidos}}</p>
+        <p><b>Endereço:</b> {{item.endereco}}</p>
+        <p><b>Cidade:</b> {{item.cidade.nome}}</p>
     </div>
     <div class="panel-footer" style="text-align:right;">         
         {{#link-to "ong" item.id tagName="a" class="btn btn-primary"}}Detalhes{{/link-to}}
