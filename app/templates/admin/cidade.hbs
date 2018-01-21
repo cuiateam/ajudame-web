@@ -1,6 +1,5 @@
-<div class="container">    
-    {{#link-to "admin.cidade.new" tagName="a" class="btn btn-primary pull-right"}}Novo{{/link-to}}
-    <h2>Cidades</h2>
+<div class="container">      
+    <h2>Cidades {{#link-to "admin.cidade.new" tagName="a" class="btn btn-primary pull-right"}}{{fa-icon "plus"}}{{/link-to}}</h2>
     <div class="container">        
         {{outlet}}
     </div>
@@ -20,7 +19,10 @@
                         <td>{{item.id}}</td>
                         <td>{{item.nome}}</td>
                         <td>{{item.estado.nome}}</td>
-                        <td><button class="btn btn-danger" {{action 'deleteCidade' item}}>X</button></td>
+                        <td>
+                            {{#link-to "admin.cidade.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil-square-o"}}{{/link-to}}
+                            <button class="btn btn-danger" {{action 'deleteCidade' item}}>{{fa-icon "trash-o"}}</button>
+                        </td>
                     </tr>
                 {{/each}}
             </tbody>

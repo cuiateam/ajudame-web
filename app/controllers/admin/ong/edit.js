@@ -3,5 +3,7 @@ import { sort } from '@ember/object/computed';
 
 export default Controller.extend({
     sortProperties: Object.freeze(['nome:asc']),
-    sortedEstados: sort('estados', 'sortProperties')
+    sortedCidades: sort('cidades', 'sortProperties'),
+    sortedOngTipos: sort('ongTipos', 'sortProperties'),
+
 });

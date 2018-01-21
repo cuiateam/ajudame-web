@@ -1,6 +1,5 @@
-<div class="container">    
-    {{#link-to "admin.ong.new" tagName="a" class="btn btn-primary pull-right"}}Novo{{/link-to}}
-    <h2>Ongs</h2>
+<div class="container">        
+    <h2>ONGs {{#link-to "admin.ong.new" tagName="a" class="btn btn-primary pull-right"}}{{fa-icon "plus"}}{{/link-to}}</h2>
     <div class="container">        
         {{outlet}}
     </div>
@@ -30,7 +29,10 @@
                         <td>{{item.endereco}}</td>
                         <td>{{item.localizacao}}</td>
                         <td>{{item.cidade.nome}}</td>
-                        <td><button class="btn btn-danger" {{action 'deleteOng' item}}>X</button></td>
+                        <td>
+                            {{#link-to "admin.ong.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil-square-o"}}{{/link-to}}
+                            <button class="btn btn-danger" {{action 'deleteOng' item}}>{{fa-icon "trash-o"}}</button>
+                        </td>
                     </tr>
                 {{/each}}
             </tbody>

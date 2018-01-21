@@ -1,4 +1,35 @@
 <div class="container">
-    <h1>Contato</h1>
+    <h2>Contato</h2>
     <hr />
+    {{#if responseMessage}}
+        <div class="alert alert-success">
+            Mensagem enviada com sucesso!
+        </div>
+    {{else}}
+        <div class="well">
+            <h4>Nos envie uma mensagem</h4>
+            <p style="text-align:justify">
+                Sinta-se a vontade para nos enviar uma mensagem de critica, conselho e/ou dúvida. <br />
+                Caso represente uma ONG ou Projeto Social e queira fazer parte do Ajuda-me, nos mande uma mensagem com as informações que entraremos em contato!
+            </p>
+        </div>
+    {{/if}}    
+     <form class="container col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="form-group input-group margin-bottom-sm ">
+            <span class="input-group-addon">{{fa-icon "user-o"}}</span>
+            {{input class="form-control" type="text" placeholder="Nome" value=model.nome}}
+        </div>
+
+        <div class="form-group input-group margin-bottom-sm has-feedback {{if model.isValidEmail 'has-success'}}">
+            <span class="input-group-addon">{{fa-icon "envelope-o"}}</span>
+            {{input class="form-control" type="text" placeholder="Endereço de Email" value=model.email}}
+        </div>
+
+        <div class="form-group input-group margin-bottom-sm has-feedback {{if model.isMessageLongEnough 'has-success'}}">
+            <span class="input-group-addon">{{fa-icon "envelope-open-o"}}</span>
+            {{textarea class="form-control" type="text" placeholder="Mensagem" value=model.mensagem}}
+        </div>
+
+        <button class="btn btn-success" {{action 'sendMessage' model}} disabled={{unless model.isValid true}}>{{fa-icon "check-square-o"}}&nbsp;Enviar</button>
+    </form>    
 </div>

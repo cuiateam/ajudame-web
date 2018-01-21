@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { match, gte, and, not} from '@ember/object/computed';
+import { match, gte, and } from '@ember/object/computed';
 
 export default DS.Model.extend({
   nome: DS.attr('string'),
@@ -9,7 +9,5 @@ export default DS.Model.extend({
   isValidEmail: match('email', /^.+@.+\..+$/),
   isMessageLongEnough: gte('mensagem.length', 10),
 
-  isValid: and('isValidEmail', 'isMessageLongEnough'),
-  isDisabled: not('isValid')
-
+  isValid: and('isValidEmail', 'isMessageLongEnough')
 });

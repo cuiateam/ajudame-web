@@ -14,18 +14,23 @@ Router.map(function() {
   this.route('admin', function(){
     this.route('ong', function() {
       this.route('new');
+      this.route('edit', {path: '/admin/ong/edit/:id'});
     })
     this.route('usuario', function() {
       this.route('new');
+      this.route('edit', {path: '/admin/usuario/edit/:id'});
     });
     this.route('cidade', function() {
       this.route('new');
+      this.route('edit', {path: '/admin/cidade/edit/:id'});
     });
     this.route('estado', function() {
       this.route('new');
+      this.route('edit', {path: '/admin/estado/edit/:id'});
     });
     this.route('ong-tipo', function() {
       this.route('new');
+      this.route('edit', {path: '/admin/ong-tipo/edit/:id'});
     });
     this.route('contato');
   });

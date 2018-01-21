@@ -1,29 +1,25 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-    
-    model() {
-        return this.store.createRecord('contato');
+
+  model() {
+    return this.store.createRecord('contato');
+  },
+
+  actions: {
+
+    sendMessage(newContactMessage) {
+      newContactMessage.save().then(() => this.controller.set('responseMessage', true));
     },
 
-    actions: {
+    willTransition() {
+      let model = this.controller.get('model');
 
-        sendMessage(newContactMessage){
-            newContactMessage.save().then(() => this.controller.set('responseMessage', true));
-        },
+      if (model.get('isNew')) {
+        model.destroyRecord();
+      }
 
-        willTransition(){
-            let model = this.controller.get('model');
-
-            if(model.get('isNew')){
-                model.destroyRecord();
-            }
-
-            this.controller.set('respondeMessage', false);
-        }
-
+      this.controller.set('responseMessage', false);
     }
-
-
-
+  }
 });

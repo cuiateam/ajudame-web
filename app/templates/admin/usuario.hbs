@@ -1,6 +1,5 @@
-<div class="container">    
-    {{#link-to "admin.usuario.new" tagName="a" class="btn btn-primary pull-right"}}Novo{{/link-to}}
-    <h2>Usuários</h2>
+<div class="container">        
+    <h2>Usuários {{#link-to "admin.usuario.new" tagName="a" class="btn btn-primary pull-right"}}{{fa-icon "plus"}}{{/link-to}}</h2>
     <div class="container">        
         {{outlet}}
     </div>
@@ -22,7 +21,10 @@
                         <td>{{item.nome}}</td>
                         <td>{{item.login}}</td>
                         <td>{{item.email}}</td>
-                        <td><button class="btn btn-danger" {{action 'deleteUsuario' item}}>X</button></td>
+                        <td>
+                            {{#link-to "admin.usuario.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil-square-o"}}{{/link-to}}
+                            <button class="btn btn-danger" {{action 'deleteEstado' item}}>{{fa-icon "trash-o"}}</button>
+                        </td>
                     </tr>
                 {{/each}}
             </tbody>
