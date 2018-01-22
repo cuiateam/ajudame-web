@@ -21,7 +21,7 @@
                         <td>{{item.nome}}</td>
                         <td>{{item.email}}</td>
                         <td>{{item.mensagem}}</td>
-                        <td><button class="btn btn-danger" {{action 'deleteContato' item}}>X</button></td>
+                        <td><button class="btn btn-danger" {{action 'deleteContato' item}}>{{fa-icon "trash-o"}}</button></td>
                     </tr>
                 {{/each}}
             </tbody>
