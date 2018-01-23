@@ -20,7 +20,7 @@
                         <td>{{item.nome}}</td>
                         <td>{{item.estado.nome}}</td>
                         <td>
-                            {{#link-to "admin.cidade.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil-square-o"}}{{/link-to}}
+                            {{#link-to "admin.cidade.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil"}}{{/link-to}}
                             <button class="btn btn-danger" {{action 'deleteCidade' item}}>{{fa-icon "trash-o"}}</button>
                         </td>
                     </tr>

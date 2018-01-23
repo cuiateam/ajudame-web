@@ -30,7 +30,7 @@
                         <td>{{item.localizacao}}</td>
                         <td>{{item.cidade.nome}}</td>
                         <td>
-                            {{#link-to "admin.ong.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil-square-o"}}{{/link-to}}
+                            {{#link-to "admin.ong.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil"}}{{/link-to}}
                             <button class="btn btn-danger" {{action 'deleteOng' item}}>{{fa-icon "trash-o"}}</button>
                         </td>
                     </tr>
