@@ -9,6 +9,7 @@ export default Route.extend({
   actions: {
 
     sendMessage(newContactMessage) {
+      newContactMessage.dataEnvio = new Date().toLocaleString();
       newContactMessage.save().then(() => this.controller.set('responseMessage', true));
     },
 
