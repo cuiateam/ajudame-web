@@ -53,6 +53,12 @@
         {{/if}}       
         <hr />
         <div style="text-align:right;">
+            {{#if model.hasFacebook}}
+                <a class="btn btn-primary" href={{model.facebook}} target="_blank">{{fa-icon "facebook"}}</a>
+            {{/if}}
+            {{#if model.hasInstagram}}
+                <a class="btn btn-primary" href={{model.instagram}} target="_blank">{{fa-icon "instagram"}}</a>
+            {{/if}}
             {{#link-to "ongs" class="btn btn-primary"}}Voltar{{/link-to}}
         </div>        
     </div>
