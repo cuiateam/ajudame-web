@@ -3,10 +3,21 @@
         <h2 class="panel-title"><b>{{item.nome}}</b></h2>
     </div>
     <div class="panel-body">
-        <p><b>Trabalhos:</b> {{item.trabalhos}}</p>
-        <p><b>Favorecidos:</b> {{item.favorecidos}}</p>
-        <p><b>Endereço:</b> {{item.endereco}}</p>
-        <p><b>Cidade:</b> {{item.cidade.nome}}</p>
+        {{#if item.hasOngTipo}}
+            <p><b>Tipo:</b> {{item.ongTipo.nome}} </p>
+        {{/if}}
+        {{#if item.hasTrabalhos}}
+            <p><b>Trabalhos:</b> {{item.trabalhos}}</p>
+        {{/if}}        
+        {{#if item.hasFavorecidos}}
+            <p><b>Favorecidos:</b> {{item.favorecidos}}</p>
+        {{/if}}  
+        {{#if item.hasEndereco}}
+            <p><b>Endereço:</b> {{item.endereco}}</p>
+        {{/if}}      
+        {{#if item.hasCidade}}
+            <p><b>Cidade:</b> {{item.cidade.nome}} - {{item.cidade.estado.sigla}}</p>
+        {{/if}}        
     </div>
     <div class="panel-footer" style="text-align:right;">         
         {{#link-to "ong" item.id tagName="a" class="btn btn-primary"}}Detalhes{{/link-to}}

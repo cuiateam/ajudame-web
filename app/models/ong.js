@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { notEmpty } from '@ember/object/computed';
 
 export default DS.Model.extend({
   nome: DS.attr('string'),
@@ -13,5 +14,19 @@ export default DS.Model.extend({
   endereco: DS.attr('string'),
   localizacao: DS.attr('string'),
   cidade: DS.belongsTo('cidade'),
-  ongTipo: DS.belongsTo('ong-tipo')
+  ongTipo: DS.belongsTo('ong-tipo'),
+
+  hasNome: notEmpty('nome'),
+  hasDescricao: notEmpty('descricao'),
+  hasTelefone: notEmpty('telefone'),
+  hasEmail: notEmpty('email'),
+  hasSite: notEmpty('site'),
+  hasFacebook: notEmpty('facebook'),
+  hasInstagram: notEmpty('instagram'),
+  hasTrabalhos: notEmpty('trabalhos'),
+  hasFavorecidos: notEmpty('favorecidos'),
+  hasEndereco: notEmpty('endereco'),
+  hasLocalizacao: notEmpty('localizacao'),
+  hasCidade: notEmpty('cidade'),
+  hasOngTipo: notEmpty('ongTipo')
 });

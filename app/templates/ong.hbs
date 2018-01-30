@@ -3,30 +3,54 @@
     <hr />
     <div class="col-md-8 col-md-offset-2 well">
         {{#link-to "ongs"}}{{fa-icon "arrow-left"}}{{/link-to}}
-        <h3>Nome</h3>
-        <p>{{model.nome}}</p>
-        <h3>Descrição</h3>
-        <p>{{model.descricao}}</p>
-        <h3>Telefone</h3>
-        <p>{{model.telefone}}</p>
-        <h3>E-mail</h3>
-        <p>{{model.email}}</p>
-        <h3>Site</h3>
-        <p>{{model.site}}</p>
-        <h3>Facebook</h3>
-        <p>{{model.facebook}}</p>
-        <h3>Instagram</h3>
-        <p>{{model.instagram}}</p>
-        <h3>Trabalhos</h3>
-        <p>{{model.trabalhos}}</p>
-        <h3>Favorecidos</h3>
-        <p>{{model.favorecidos}}</p>
-        <h3>Endereço</h3>
-        <p>{{model.endereco}}</p>
-        <h3>Cidade</h3>
-        <p>{{model.cidade.nome}}</p>
-        <h3>Tipo</h3>
-        <p>{{model.ongTipo.nome}}</p>
+        {{#if model.hasNome}}
+            <h3>Nome</h3>
+            <p>{{model.nome}}</p>    
+        {{/if}}
+        {{#if model.hasOngTipo}}
+            <h3>Tipo</h3>
+            <p>{{model.ongTipo.nome}}</p>
+        {{/if}} 
+        {{#if model.hasDescricao}}
+            <h3>Descrição</h3>
+            <p>{{model.descricao}}</p>
+        {{/if}}
+        {{#if model.hasTelefone}}
+            <h3>Telefone</h3>
+            <p>{{model.telefone}}</p>
+        {{/if}}
+        {{#if model.hasEmail}}
+            <h3>E-mail</h3>
+            <p>{{model.email}}</p>
+        {{/if}}
+        {{#if model.hasSite}}
+            <h3>Site</h3>
+            <p>{{model.site}}</p>
+        {{/if}}
+        {{#if model.hasFacebook}}
+            <h3>Facebook</h3>
+            <p>{{model.facebook}}</p>
+        {{/if}}        
+        {{#if model.hasInstagram}}
+            <h3>Instagram</h3>
+            <p>{{model.instagram}}</p>
+        {{/if}}
+        {{#if model.hasTrabalhos}}
+            <h3>Trabalhos</h3>
+            <p>{{model.trabalhos}}</p>
+        {{/if}}      
+        {{#if model.hasFavorecidos}}
+            <h3>Favorecidos</h3>
+            <p>{{model.favorecidos}}</p>
+        {{/if}}
+        {{#if model.hasEndereco}}
+            <h3>Endereço</h3>
+            <p>{{model.endereco}}</p>
+        {{/if}}
+        {{#if model.hasCidade}}
+            <h3>Cidade</h3>
+            <p>{{model.cidade.nome}} - {{model.cidade.estado.sigla}}</p>
+        {{/if}}       
         <hr />
         <div style="text-align:right;">
             {{#link-to "ongs" class="btn btn-primary"}}Voltar{{/link-to}}
