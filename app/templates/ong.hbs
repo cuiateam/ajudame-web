@@ -53,6 +53,9 @@
         {{/if}}       
         <hr />
         <div style="text-align:right;">
+            {{#if model.hasEndereco}}
+                <a class="btn btn-primary" href="https://www.google.com.br/maps/place/{{model.endereco}} {{model.cidade.nome}}" target="_blank">{{fa-icon "map-o"}}</a>
+            {{/if}}
             {{#if model.hasFacebook}}
                 <a class="btn btn-primary" href={{model.facebook}} target="_blank">{{fa-icon "facebook"}}</a>
             {{/if}}
