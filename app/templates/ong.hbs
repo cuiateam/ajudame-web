@@ -53,14 +53,17 @@
         {{/if}}       
         <hr />
         <div style="text-align:right;">
+            {{#if model.hasSite}}
+                <a class="btn btn-primary" href={{model.site}} data-tooltip="Site" target="_blank" >{{fa-icon "globe"}}</a>
+            {{/if}}
             {{#if model.hasEndereco}}
-                <a class="btn btn-primary" href="https://www.google.com.br/maps/place/{{model.endereco}} {{model.cidade.nome}}" target="_blank">{{fa-icon "map-o"}}</a>
+                <a class="btn btn-primary" href="https://www.google.com.br/maps/place/{{model.endereco}} {{model.cidade.nome}}" data-tooltip="Mapa" target="_blank">{{fa-icon "map-o"}}</a>
             {{/if}}
             {{#if model.hasFacebook}}
-                <a class="btn btn-primary" href={{model.facebook}} target="_blank">{{fa-icon "facebook"}}</a>
+                <a class="btn btn-primary" href={{model.facebook}} data-tooltip="Facebook" target="_blank">{{fa-icon "facebook"}}</a>
             {{/if}}
             {{#if model.hasInstagram}}
-                <a class="btn btn-primary" href={{model.instagram}} target="_blank">{{fa-icon "instagram"}}</a>
+                <a class="btn btn-primary" href={{model.instagram}} data-tooltip="Instagram" target="_blank">{{fa-icon "instagram"}}</a>
             {{/if}}
             {{#link-to "ongs" class="btn btn-primary"}}Voltar{{/link-to}}
         </div>        
