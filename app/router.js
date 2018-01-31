@@ -34,6 +34,7 @@ Router.map(function() {
     });
     this.route('contato');
   });
+  this.route('error', { path: '/*path' });
 });
 
 export default Router;
