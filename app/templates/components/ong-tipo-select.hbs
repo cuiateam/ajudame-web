@@ -1,4 +1,6 @@
-<option value="0">Selecione</option>
+<option value={{ong.ongTipo.id}}>
+  {{ong.ongTipo.nome}}
+</option>
 {{#each ongTipos as |ongTipo|}}
   <option value={{ongTipo.id}}>
     {{ongTipo.nome}}

@@ -1,6 +1,10 @@
-<option value="0">Selecione</option>
+<option value={{cidade.estado.id}}>
+  {{cidade.estado.nome}}
+</option>
 {{#each estados as |estado|}}
-  <option value={{estado.id}}>
-    {{estado.nome}}
-  </option>
+  {{#if  'cidade.estado'}}
+    <option value={{estado.id}}>
+      {{estado.nome}}
+    </option>
+  {{/if}}  
 {{/each}}

@@ -1,4 +1,6 @@
-<option value="0">Selecione</option>
+<option value={{ong.cidade.id}}>
+  {{ong.cidade.nome}}
+</option>
 {{#each cidades as |cidade|}}
   <option value={{cidade.id}}>
     {{cidade.nome}}
