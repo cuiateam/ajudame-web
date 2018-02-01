@@ -23,7 +23,7 @@
                         <td>{{item.email}}</td>
                         <td>
                             {{#link-to "admin.usuario.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil"}}{{/link-to}}
-                            <button class="btn btn-danger" {{action 'deleteEstado' item}}>{{fa-icon "trash-o"}}</button>
+                            <button class="btn btn-danger" {{action 'deleteUsuario' item}}>{{fa-icon "trash-o"}}</button>
                         </td>
                     </tr>
                 {{/each}}
