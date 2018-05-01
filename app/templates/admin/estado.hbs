@@ -4,28 +4,30 @@
         {{outlet}}
     </div>
     <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Sigla</th>
-                    <th scope="col"></th>                    
-                </tr>
-            </thead>
-            <tbody>
-                {{#each sortedModel as |item|}}
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>{{item.id}}</td>
-                        <td>{{item.nome}}</td>
-                        <td class="uppercase">{{item.sigla}}</td>
-                        <td>
-                            {{#link-to "admin.estado.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil"}}{{/link-to}}
-                            <button class="btn btn-danger" {{action 'deleteEstado' item}}>{{fa-icon "trash-o"}}</button>
-                        </td>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Sigla</th>
+                        <th scope="col"></th>                    
                     </tr>
-                {{/each}}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {{#each sortedModel as |item|}}
+                        <tr>
+                            <td>{{item.id}}</td>
+                            <td>{{item.nome}}</td>
+                            <td class="uppercase">{{item.sigla}}</td>
+                            <td>
+                                {{#link-to "admin.estado.edit" item.id tagName="a" class="btn btn-primary"}}{{fa-icon "pencil"}}{{/link-to}}
+                                <button class="btn btn-danger" {{action 'deleteEstado' item}}>{{fa-icon "trash-o"}}</button>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
