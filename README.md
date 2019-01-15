@@ -16,7 +16,7 @@ Você irá precisar ter instalado em sua máquina:
 
 ## Instalação
 
-* `git clone https://github.com/cuiateam/ajudame-web.git`
+* `git clone https://github.com/ziguifrido/ajudame-web.git`
 * `cd ajudame-web`
 * `npm install`
 
