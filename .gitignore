@@ -26,3 +26,6 @@ package.json.ember-try
 .npmrc
 .firebase-debug.log
 .firebaserc
+.firebase/
+
+.env

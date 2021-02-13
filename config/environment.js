@@ -8,10 +8,10 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     firebase: {
-      apiKey: 'AIzaSyCxelfpEsDzlVy1LAJzrIbCJxCYY1i0loo',
-      authDomain: 'ajuda-me.firebaseapp.com',
-      databaseURL: 'https://ajuda-me.firebaseio.com',
-      storageBucket: 'ajuda-me.appspot.com',
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      databaseURL: process.env.FIREBASE_DATABASE_URL,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
     },
   
   
